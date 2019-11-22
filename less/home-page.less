@@ -1,21 +1,52 @@
 .home {
+    
+  .header{
+    border-top: dashed 2px @navigation-border;
+    border-bottom: dashed 2px @navigation-border;
+   
+    .img{
+      max-width:100%;
+    }
+    div{
+      margin:2rem;
+     
+      h2{
+       
+       font-size: 3.2rem;
+      
+      
+      }
+
+    }
+
+  }
 
   .content-section {
     margin: 30px 0;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    .display-flex(space-between,center);
+    @media @mobile{
+      flex-direction: column;
+    }
 
    
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+      @media @mobile {
+        width: auto;
+        margin:2rem;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+      @media @mobile {
+        width: auto;
+        margin:2rem;
+      }
 
       img {
         border-radius: 10px;
@@ -26,6 +57,10 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+    @media @mobile{
+      flex-direction: column-reverse;
+    }
+
 
     .text-content {
       padding-left: 1%;
@@ -41,6 +76,10 @@
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+    @media @mobile {
+      width: auto;
+      margin:2rem;
+    }
 
     img {
       border-radius: 10px;
@@ -49,13 +88,52 @@
 
   .content-pick {
     padding-top: 30px;
-    border-top: 2px dashed @navigation-border;
-    display: flex;
-    justify-content: space-between;
+    border-top: 2px dashed @eastern-blue;
+    // color:  if((iscolor(@navigation-border)), darken(@navigation-border, 10%), purple);
+    .display-flex(space-between,center);
+    @media @mobile{
+      flex-direction: column;
+    }
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      @media @mobile {
+        width:70%;
+        margin:5rem;
+        .display-flex(center,center);
+        flex-direction: column;
+        
+
+       
+      }
+
+      div{
+        .display-flex(center,center);
+        font-size:2rem;
+        width: 70%;
+        height: 50px;
+        .butn(white,#008080,1rem);
+        @media @mobile{
+          height: 30px;
+          width: 50%;
+          
+        }
+        p{
+          line-height: 1.5;
+          font-size: 1.6rem;
+          padding-bottom: 10px;
+          @media @mobile{
+            margin-left: 50px;
+            text-align: center;
+          }
+        }
+      }
     }
+  }
+
+  #wrapper {
+    background: #ccc;
+    display:none
   }
 }// home
